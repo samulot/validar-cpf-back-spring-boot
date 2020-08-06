@@ -19,7 +19,13 @@ public class ValidadorController {
 		 return "{\"status\": \"invalido\"}";
 	}
 		
-	// @GetMapping("/")
+	@GetMapping("/")
+	public String validaCPF(@RequestParam String cpf) {
+		if (Validador.isCPF(cpf)) {
+			return "{\"status\": \"valido\"}";
+		}
+		 return "{\"status\": \"invalido\"}";
+	}
 	// public String index() {
 	//     return "{\"mensagem\": \"Bem-Vindo a API Turma 6 Itau\"}";
 	// }
