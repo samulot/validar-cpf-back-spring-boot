@@ -21,7 +21,11 @@ public class ValidadorController {
 	
 	@GetMapping("/")
 	public String index() {
-		return "{\"mensagem\": \"Bem-Vindo a API Turma 6 Itau\"}";
+		if (Validador.isCPF(cpf)) {
+			return "{\"status\": \"valido\"}";
+		}
+		 return "{\"status\": \"invalido\"}";
 	}
-	
+
+	// return "{\"mensagem\": \"Bem-Vindo a API Turma 6 Itau\"}";
 }
