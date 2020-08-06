@@ -11,21 +11,13 @@ import br.com.professorisidro.validacpf.service.Validador;
 @CrossOrigin("*")
 public class ValidadorController {
 	
-	@GetMapping("/validacpf")
+	@GetMapping("/")
+	public String index()
 	public String validaCPF(@RequestParam String cpf) {
 		if (Validador.isCPF(cpf)) {
 			return "{\"status\": \"valido\"}";
 		}
 		 return "{\"status\": \"invalido\"}";
 	}
-	
-	@GetMapping("/")
-	public String index() {
-		if (Validador.isCPF(cpf)) {
-			return "{\"status\": \"valido\"}";
-		}
-		 return "{\"status\": \"invalido\"}";
-	}
 
-	// return "{\"mensagem\": \"Bem-Vindo a API Turma 6 Itau\"}";
 }
